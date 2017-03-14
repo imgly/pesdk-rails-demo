@@ -19,8 +19,6 @@ The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_med
 ```bash
 rails new pesdk-rails-demo
 cd pesdk-rails-demo 
-bundle install
-bundle exec spring binstub --all
 ```
 
 2. Get PhotoEditor HTML5 
@@ -33,14 +31,14 @@ unzip -x "v$VERSION.zip"
 3. Copy files to vendor directory 
 ```bash
 mkdir -p vendor/assets/javascripts
-cp "pesdk-html5-build-$VERSION/js/PhotoEditor*" vendor/assets/javascripts
-cp "pesdk-html5-build-$VERSION/js/vendor/*" vendor/assets/javascripts
+cp "pesdk-html5-build-$VERSION/js/PhotoEditor"* vendor/assets/javascripts
+cp "pesdk-html5-build-$VERSION/js/vendor/"* vendor/assets/javascripts
 
 mkdir -p vendor/assets/stylesheets
-cp "pesdk-html5-build-$VERSION/css/PhotoEditor*" vendor/assets/stylesheets
+cp "pesdk-html5-build-$VERSION/css/PhotoEditor"* vendor/assets/stylesheets
 
 mkdir -p vendor/assets/images
-cp -R "pesdk-html5-build-$VERSION/assets/*" vendor/assets/images
+cp -R "pesdk-html5-build-$VERSION/assets/"* vendor/assets/images
 ```
 
 4. Create new home controller with index page
@@ -49,7 +47,7 @@ cp -R "pesdk-html5-build-$VERSION/assets/*" vendor/assets/images
 rails generate controller home index
 ```
 
-5. Open `views/home/index.html.erb`
+5. Open `app/views/home/index.html.erb`
 
 ```html
 <%# PESDK Demo Integration %>
@@ -73,23 +71,41 @@ rails generate controller home index
 ...
 ```
 
-8. Open or create `app/assets/javascripts/home.js` and put the following code in
+8. Edit `app/assets/javascripts/home.coffee` and insert
+
+```coffeescript 
+window.onload = ->
+  apiKey = 'your-api-key'
+  # <-- Please replace this with your API key
+  container = document.getElementById('pesdk')
+  editor = new (PhotoEditorSDK.UI.ReactUI)(
+    container: container
+    apiKey: apiKey
+    assets:
+      baseUrl: '/assets'
+      resolver: (path) ->
+        path
+)
+  return
+```
+
+or create `app/assets/javascripts/home.js` and insert
 
 ```javascript 
-  window.onload = function () {
-    var apiKey = 'your-api-key' // <-- Please replace this with your API key
+window.onload = function () {
+  var apiKey = 'your-api-key' // <-- Please replace this with your API key
 
-    var container = document.getElementById('pesdk')
+  var container = document.getElementById('pesdk')
 
-    var editor = new PhotoEditorSDK.UI.ReactUI({
-      container: container,
-      apiKey: apiKey,
-      assets: {
-          baseUrl: '/assets', // => Matches default asset url for rails
-          resolver: function (path) { return path }
-      }
-    })
-  }
+  var editor = new PhotoEditorSDK.UI.ReactUI({
+    container: container,
+    apiKey: apiKey,
+    assets: {
+        baseUrl: '/assets', // => Matches default asset url for rails
+        resolver: function (path) { return path }
+    }
+  })
+}
 ```
 
 
@@ -97,6 +113,7 @@ rails generate controller home index
 ```bash 
 bundle exec rails server -p 3000 
 ```
+
 10. Open  Webbrowser and go to `http://localhost:3000/home/index`
 
 
