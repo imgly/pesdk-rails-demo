@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+//= require react
+//= require react-dom
+//= require PhotoEditorSDK.min
+//= require PhotoEditorReactUI.min
+
 //= require_tree .

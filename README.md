@@ -1,24 +1,109 @@
-# README
+<p align="center">
+  <img src="http://static.photoeditorsdk.com/logo.png" />
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# PhotoEditorSDK HTML5 Ruby on Rails Demonstration
+Rails Gem for easily integrating [PhotoEditorSDK HTML5](https://www.photoeditorsdk.com) in Ruby on Rails.
 
-Things you may want to cover:
+## Note 
+The PhotoEditorSDK is a product of 9Elements GmBH. 
+Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_source=Github&utm_medium=PESDK&utm_term=HTML5-Rails). Please see `LICENSE.md` for licensing details.
 
-* Ruby version
 
-* System dependencies
+## PhotoEditor SDK for HTML5.
+The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=HTML5-Rails) for HTML5 is a **fully customizable** photo editor which you can integrate into your Ruby on Rails app within minutes.
 
-* Configuration
+## Integration
 
-* Database creation
+1. Init Rails 
+```
+rails new pesdk-rails-demo
+cd pesdk-rails-demo 
+bundle install
+bundle exec spring binstub --all
+```
 
-* Database initialization
+1. Get PhotoEditor HTML5 
+```
+export VERSION=3.6.5
+wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
+unzip -x "v$VERSION.zip"
+```
 
-* How to run the test suite
+1. Copy files to vendor directory 
+```
+mkdir -p vendor/assets/javascripts
+cp "pesdk-html5-build-$VERSION/js/PhotoEditor*" vendor/assets/javascripts
+cp "pesdk-html5-build-$VERSION/js/vendor/*" vendor/assets/javascripts
 
-* Services (job queues, cache servers, search engines, etc.)
+mkdir -p vendor/assets/stylesheets
+cp "pesdk-html5-build-$VERSION/css/PhotoEditor*" vendor/assets/stylesheets
 
-* Deployment instructions
+mkdir -p vendor/assets/images
+cp -R "pesdk-html5-build-$VERSION/assets/*" vendor/assets/images
+```
 
-* ...
+1. Create new root page to show off the PESDK Demo 
+
+```bash 
+rails generate controller home index
+```
+
+1. Open `views/home/index.html.erb`
+
+```html
+<%# PESDK Demo Integration %>
+<div id="pesdk" style="width: 100vmin; height: 75vmin; padding: 0px; margin: 0px">
+```
+
+1. Update `app/assets/javascripts/application.js`
+```javascript 
+...
+//= require react
+//= require react-dom
+//= require PhotoEditorSDK.min
+//= require PhotoEditorReactUI.min
+...
+```
+1. Update `app/assets/stylesheets/application.css`
+```css 
+...
+*= require PhotoEditorReactUI
+...
+```
+1. Open or create `app/assets/javascripts/home.js` and put the following code in
+
+```javascript 
+  window.onload = function () {
+    var apiKey = 'your-api-key' // <-- Please replace this with your API key
+
+    var container = document.getElementById('pesdk')
+
+    var editor = new PhotoEditorSDK.UI.ReactUI({
+      container: container,
+      apiKey: apiKey,
+      assets: {
+          baseUrl: '/assets', // => Matches default asset url for rails
+          resolver: function (path) { return path }
+      }
+    })
+  }
+```
+
+
+1. Start rails 
+```bash 
+bundle exec rails server -p 3000 
+```
+1. Open  Webbrowser and point to `http://localhost:3000/home/index`
+
+
+## License
+Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
+
+## Authors and Contributors
+Made 2013-2017 by @9elements
+
+## Support or Contact
+Contact contact@photoeditorsdk.com for support requests or to upgrade to an enterprise licence.
+
