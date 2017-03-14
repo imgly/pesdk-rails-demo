@@ -16,22 +16,22 @@ The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_med
 ## Integration
 
 1. Init Rails 
-```
+```bash
 rails new pesdk-rails-demo
 cd pesdk-rails-demo 
 bundle install
 bundle exec spring binstub --all
 ```
 
-1. Get PhotoEditor HTML5 
-```
+2. Get PhotoEditor HTML5 
+```bash
 export VERSION=3.6.5
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 
-1. Copy files to vendor directory 
-```
+3. Copy files to vendor directory 
+```bash
 mkdir -p vendor/assets/javascripts
 cp "pesdk-html5-build-$VERSION/js/PhotoEditor*" vendor/assets/javascripts
 cp "pesdk-html5-build-$VERSION/js/vendor/*" vendor/assets/javascripts
@@ -43,20 +43,20 @@ mkdir -p vendor/assets/images
 cp -R "pesdk-html5-build-$VERSION/assets/*" vendor/assets/images
 ```
 
-1. Create new root page to show off the PESDK Demo 
+4. Create new home controller with index page
 
 ```bash 
 rails generate controller home index
 ```
 
-1. Open `views/home/index.html.erb`
+5. Open `views/home/index.html.erb`
 
 ```html
 <%# PESDK Demo Integration %>
 <div id="pesdk" style="width: 100vmin; height: 75vmin; padding: 0px; margin: 0px">
 ```
 
-1. Update `app/assets/javascripts/application.js`
+6. Update `app/assets/javascripts/application.js`
 ```javascript 
 ...
 //= require react
@@ -65,13 +65,15 @@ rails generate controller home index
 //= require PhotoEditorReactUI.min
 ...
 ```
-1. Update `app/assets/stylesheets/application.css`
+
+7. Update `app/assets/stylesheets/application.css`
 ```css 
 ...
 *= require PhotoEditorReactUI
 ...
 ```
-1. Open or create `app/assets/javascripts/home.js` and put the following code in
+
+8. Open or create `app/assets/javascripts/home.js` and put the following code in
 
 ```javascript 
   window.onload = function () {
@@ -91,11 +93,11 @@ rails generate controller home index
 ```
 
 
-1. Start rails 
+9. Start rails 
 ```bash 
 bundle exec rails server -p 3000 
 ```
-1. Open  Webbrowser and point to `http://localhost:3000/home/index`
+10. Open  Webbrowser and go to `http://localhost:3000/home/index`
 
 
 ## License
