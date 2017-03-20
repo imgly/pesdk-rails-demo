@@ -2,8 +2,8 @@
   <img src="http://static.photoeditorsdk.com/logo.png" />
 </p>
 
-# PhotoEditorSDK HTML5 Ruby on Rails Demonstration
-Rails Gem for easily integrating the [PhotoEditor SDK for HTML5](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) in Ruby on Rails.
+# PhotoEditor SDK HTML5 Ruby on Rails Demonstration
+Rails Gem for easily integrating the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) for HTML5 in Ruby on Rails.
 
 ## Note 
 The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) is a product of 9Elements GmBH. 
