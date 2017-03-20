@@ -3,15 +3,15 @@
 </p>
 
 # PhotoEditorSDK HTML5 Ruby on Rails Demonstration
-Rails Gem for easily integrating [PhotoEditorSDK HTML5](https://www.photoeditorsdk.com) in Ruby on Rails.
+Rails Gem for easily integrating the [PhotoEditor SDK for HTML5](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) in Ruby on Rails.
 
 ## Note 
-The PhotoEditorSDK is a product of 9Elements GmBH. 
-Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_source=Github&utm_medium=PESDK&utm_term=RAILS-DEMO). Please see `LICENSE.md` for licensing details.
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) is a product of 9Elements GmBH. 
+Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo). Please see `LICENSE.md` for licensing details.
 
 
 ## PhotoEditor SDK for HTML5.
-The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=RAILS-DEMO) for HTML5 is a **fully customizable** photo editor which you can integrate into your Ruby on Rails app within minutes.
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) for HTML5 is a **fully customizable** photo editor which you can integrate into your Ruby on Rails app within minutes.
 
 ## Integration
 
