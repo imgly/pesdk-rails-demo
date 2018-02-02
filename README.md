@@ -21,14 +21,22 @@ rails new pesdk-rails-demo
 cd pesdk-rails-demo 
 ```
 
-2. Get PhotoEditor HTML5 
+2. Get PhotoEditor HTML5
+
 ```bash
-export VERSION=3.6.5
+export VERSION=4.1.2
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
+unzip -x "v$VERSION.zip"
+```
+with curl
+```bash
+export VERSION=4.1.2
+curl -O -L "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 
 3. Copy files to vendor directory 
+
 ```bash
 mkdir -p vendor/assets/javascripts
 cp "pesdk-html5-build-$VERSION/js/PhotoEditor"* vendor/assets/javascripts
@@ -43,7 +51,7 @@ cp -R "pesdk-html5-build-$VERSION/assets/"* vendor/assets/images
 
 4. Create new home controller with index page
 
-```bash 
+```ruby 
 rails generate controller home index
 ```
 
@@ -55,19 +63,21 @@ rails generate controller home index
 ```
 
 6. Update `app/assets/javascripts/application.js`
+
 ```javascript 
 ...
 //= require react
 //= require react-dom
-//= require PhotoEditorSDK.min
-//= require PhotoEditorReactUI.min
+//= require PhotoEditorSDK
+//= require PhotoEditorSDK.UI.ReactUI
 ...
 ```
 
 7. Update `app/assets/stylesheets/application.css`
+
 ```css 
 ...
-*= require PhotoEditorReactUI
+*= require PhotoEditorSDK.UI.ReactUI
 ...
 ```
 
@@ -89,7 +99,7 @@ window.onload = ->
   return
 ```
 
-or create `app/assets/javascripts/home.js` and insert
+If you don't want to use CoffeeScript, delete `app/assets/javascripts/home.coffee`, create `app/assets/javascripts/home.js` and insert
 
 ```javascript 
 window.onload = function () {
@@ -115,7 +125,6 @@ bundle exec rails server -p 3000
 ```
 
 10. Open  Webbrowser and go to `http://localhost:3000/home/index`
-
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
