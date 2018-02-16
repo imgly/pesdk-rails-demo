@@ -51,7 +51,7 @@ cp -R "pesdk-html5-build-$VERSION/assets/"* vendor/assets/images
 
 4. Create new home controller with index page
 
-```ruby 
+``` bash
 rails generate controller home index
 ```
 
@@ -83,14 +83,13 @@ rails generate controller home index
 
 8. Edit `app/assets/javascripts/home.coffee` and insert
 
-```coffeescript 
+```coffeescript
 window.onload = ->
-  apiKey = 'your-api-key'
-  # <-- Please replace this with your API key
+  license = 'license-string' // <-- Please replace this with the content of your license file. The JSON-object must be in string format.
   container = document.getElementById('pesdk')
   editor = new (PhotoEditorSDK.UI.ReactUI)(
     container: container
-    apiKey: apiKey
+    license: license
     assets:
       baseUrl: '/assets'
       resolver: (path) ->
@@ -101,15 +100,13 @@ window.onload = ->
 
 If you don't want to use CoffeeScript, delete `app/assets/javascripts/home.coffee`, create `app/assets/javascripts/home.js` and insert
 
-```javascript 
+```javascript
 window.onload = function () {
-  var apiKey = 'your-api-key' // <-- Please replace this with your API key
-
+  license = 'license-string' // <-- Please replace this with the content of your license file. The JSON-object must be in string format.
   var container = document.getElementById('pesdk')
-
   var editor = new PhotoEditorSDK.UI.ReactUI({
     container: container,
-    apiKey: apiKey,
+    license: license,
     assets: {
         baseUrl: '/assets', // => Matches default asset url for rails
         resolver: function (path) { return path }
@@ -120,11 +117,11 @@ window.onload = function () {
 
 
 9. Start rails 
-```bash 
+``` bash
 bundle exec rails server -p 3000 
 ```
 
-10. Open  Webbrowser and go to `http://localhost:3000/home/index`
+10. Open Webbrowser and go to `http://localhost:3000/home/index`
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
