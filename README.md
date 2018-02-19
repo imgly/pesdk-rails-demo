@@ -13,6 +13,8 @@ Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_cam
 ## PhotoEditor SDK for HTML5.
 The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) for HTML5 is a **fully customizable** photo editor which you can integrate into your Ruby on Rails app within minutes.
 
+Our SDK offers two different UIs you can use. The following installation guide will show you how to use the ReactUI. If you want to use the DesktopUI take a look at the section below this guide.
+
 ## Integration
 
 1. Init Rails 
@@ -123,6 +125,14 @@ bundle exec rails server -p 3000
 
 10. Open Webbrowser and go to `http://localhost:3000/home/index`
 
+## Switch between React- and DesktopUI
+In order to use the DesktopUI instead of the ReactUI, you need to make some changes to your setup. Replace in point ...
+
+6.  `//= require PhotoEditorSDK.UI.ReactUI` with `//= require PhotoEditorSDK.UI.DesktopUI`
+7.  `*= require PhotoEditorSDK.UI.ReactUI` with `*= require PhotoEditorSDK.UI.DesktopUI`
+8.  `editor = new (PhotoEditorSDK.UI.ReactUI)` with `editor = new (PhotoEditorSDK.UI.DesktopUI)` in `home.coffee` or 
+
+    `var editor = new PhotoEditorSDK.UI.ReactUI` with `var editor = new PhotoEditorSDK.UI.DesktopUI` in `home.js`
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
 
