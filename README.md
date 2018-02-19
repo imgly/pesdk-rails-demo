@@ -60,7 +60,7 @@ rails generate controller home index
 5. Open `app/views/home/index.html.erb`
 
 ```html
-<%# PESDK Demo Integration %>
+<!-- PESDK Demo Integration -->
 <div id="pesdk" style="width: 100vmin; height: 75vmin; padding: 0px; margin: 0px">
 ```
 
