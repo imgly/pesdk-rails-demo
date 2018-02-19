@@ -81,7 +81,9 @@ rails generate controller home index
 ...
 *= require PhotoEditorSDK.UI.ReactUI
 ...
+*/
 ```
+Important: Insert the code snipped before the `*/`
 
 8. Edit `app/assets/javascripts/home.coffee` and insert
 
@@ -133,6 +135,7 @@ In order to use the DesktopUI instead of the ReactUI, you need to make some chan
 8.  `editor = new (PhotoEditorSDK.UI.ReactUI)` with `editor = new (PhotoEditorSDK.UI.DesktopUI)` in `home.coffee` or 
 
     `var editor = new PhotoEditorSDK.UI.ReactUI` with `var editor = new PhotoEditorSDK.UI.DesktopUI` in `home.js`
+
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
 
