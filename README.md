@@ -13,6 +13,8 @@ Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_cam
 ## PhotoEditor SDK for HTML5.
 The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) for HTML5 is a **fully customizable** photo editor which you can integrate into your Ruby on Rails app within minutes.
 
+Our SDK offers two different UIs you can use. The following installation guide will show you how to use the ReactUI. If you want to use the DesktopUI take a look at the section below this guide.
+
 ## Integration
 
 1. Init Rails 
@@ -21,14 +23,22 @@ rails new pesdk-rails-demo
 cd pesdk-rails-demo 
 ```
 
-2. Get PhotoEditor HTML5 
+2. Get PhotoEditor HTML5
+
 ```bash
-export VERSION=3.6.5
+export VERSION=4.1.2
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
+unzip -x "v$VERSION.zip"
+```
+with curl
+```bash
+export VERSION=4.1.2
+curl -O -L "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 
 3. Copy files to vendor directory 
+
 ```bash
 mkdir -p vendor/assets/javascripts
 cp "pesdk-html5-build-$VERSION/js/PhotoEditor"* vendor/assets/javascripts
@@ -43,44 +53,47 @@ cp -R "pesdk-html5-build-$VERSION/assets/"* vendor/assets/images
 
 4. Create new home controller with index page
 
-```bash 
+``` bash
 rails generate controller home index
 ```
 
 5. Open `app/views/home/index.html.erb`
 
 ```html
-<%# PESDK Demo Integration %>
+<!-- PESDK Demo Integration -->
 <div id="pesdk" style="width: 100vmin; height: 75vmin; padding: 0px; margin: 0px">
 ```
 
 6. Update `app/assets/javascripts/application.js`
+
 ```javascript 
 ...
 //= require react
 //= require react-dom
-//= require PhotoEditorSDK.min
-//= require PhotoEditorReactUI.min
+//= require PhotoEditorSDK
+//= require PhotoEditorSDK.UI.ReactUI
 ...
 ```
 
 7. Update `app/assets/stylesheets/application.css`
+
 ```css 
 ...
-*= require PhotoEditorReactUI
+*= require PhotoEditorSDK.UI.ReactUI
 ...
+*/
 ```
+Important: Insert the code snipped before the `*/`
 
 8. Edit `app/assets/javascripts/home.coffee` and insert
 
-```coffeescript 
+```coffeescript
 window.onload = ->
-  apiKey = 'your-api-key'
-  # <-- Please replace this with your API key
+  license = 'license-string' // <-- Please replace this with the content of your license file. The JSON-object must be in string format.
   container = document.getElementById('pesdk')
   editor = new (PhotoEditorSDK.UI.ReactUI)(
     container: container
-    apiKey: apiKey
+    license: license
     assets:
       baseUrl: '/assets'
       resolver: (path) ->
@@ -89,17 +102,15 @@ window.onload = ->
   return
 ```
 
-or create `app/assets/javascripts/home.js` and insert
+If you don't want to use CoffeeScript, delete `app/assets/javascripts/home.coffee`, create `app/assets/javascripts/home.js` and insert
 
-```javascript 
+```javascript
 window.onload = function () {
-  var apiKey = 'your-api-key' // <-- Please replace this with your API key
-
+  license = 'license-string' // <-- Please replace this with the content of your license file. The JSON-object must be in string format.
   var container = document.getElementById('pesdk')
-
   var editor = new PhotoEditorSDK.UI.ReactUI({
     container: container,
-    apiKey: apiKey,
+    license: license,
     assets: {
         baseUrl: '/assets', // => Matches default asset url for rails
         resolver: function (path) { return path }
@@ -110,12 +121,20 @@ window.onload = function () {
 
 
 9. Start rails 
-```bash 
+``` bash
 bundle exec rails server -p 3000 
 ```
 
-10. Open  Webbrowser and go to `http://localhost:3000/home/index`
+10. Open Webbrowser and go to `http://localhost:3000/home/index`
 
+## Switch between React- and DesktopUI
+In order to use the DesktopUI instead of the ReactUI, you need to make some changes to your setup. Replace in point ...
+
+6.  `//= require PhotoEditorSDK.UI.ReactUI` with `//= require PhotoEditorSDK.UI.DesktopUI`
+7.  `*= require PhotoEditorSDK.UI.ReactUI` with `*= require PhotoEditorSDK.UI.DesktopUI`
+8.  `editor = new (PhotoEditorSDK.UI.ReactUI)` with `editor = new (PhotoEditorSDK.UI.DesktopUI)` in `home.coffee` or 
+
+    `var editor = new PhotoEditorSDK.UI.ReactUI` with `var editor = new PhotoEditorSDK.UI.DesktopUI` in `home.js`
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
