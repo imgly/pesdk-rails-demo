@@ -26,13 +26,13 @@ cd pesdk-rails-demo
 2. Get PhotoEditor HTML5
 
 ```bash
-export VERSION=4.1.2
+export VERSION=4.13.2
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 with curl
 ```bash
-export VERSION=4.1.2
+export VERSION=4.13.2
 curl -O -L "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
@@ -140,7 +140,7 @@ In order to use the DesktopUI instead of the ReactUI, you need to make some chan
 Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
 
 ## Authors and Contributors
-Made 2013-2017 by @9elements
+Made 2013-2019 by @9elements
 
 ## Support or Contact
 Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://www.photoeditorsdk.com/pricing) on our website.
