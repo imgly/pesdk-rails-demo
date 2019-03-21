@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//= require react
-//= require react-dom
+//= require react.production.min
+//= require react-dom.production.min
 //= require PhotoEditorSDK
 //= require PhotoEditorSDK.UI.ReactUI
 

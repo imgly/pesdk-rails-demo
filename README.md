@@ -6,7 +6,7 @@
 Rails Gem for easily integrating the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) for HTML5 in Ruby on Rails.
 
 ## Note 
-The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) is a product of 9Elements GmBH. 
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) is a product of img.ly GmBH. 
 Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo). Please see `LICENSE.md` for licensing details.
 
 
@@ -26,13 +26,13 @@ cd pesdk-rails-demo
 2. Get PhotoEditor HTML5
 
 ```bash
-export VERSION=4.16.0
+export VERSION=4.16.1
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 with curl
 ```bash
-export VERSION=4.16.0
+export VERSION=4.16.1
 curl -O -L "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
@@ -68,8 +68,8 @@ rails generate controller home index
 
 ```javascript 
 ...
-//= require react
-//= require react-dom
+//= require react.production.min
+//= require react-dom.production.min
 //= require PhotoEditorSDK
 //= require PhotoEditorSDK.UI.ReactUI
 ...
