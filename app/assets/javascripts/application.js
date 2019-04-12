@@ -16,7 +16,7 @@
 
 //= require react.production.min
 //= require react-dom.production.min
-//= require PhotoEditorSDK
-//= require PhotoEditorSDK.UI.ReactUI
+//= require PhotoEditorSDK.min
+//= require PhotoEditorSDK.UI.ReactUI.min
 
 //= require_tree .

@@ -70,8 +70,8 @@ rails generate controller home index
 ...
 //= require react.production.min
 //= require react-dom.production.min
-//= require PhotoEditorSDK
-//= require PhotoEditorSDK.UI.ReactUI
+//= require PhotoEditorSDK.min
+//= require PhotoEditorSDK.UI.ReactUI.min
 ...
 ```
 
@@ -79,7 +79,7 @@ rails generate controller home index
 
 ```css 
 ...
-*= require PhotoEditorSDK.UI.ReactUI
+*= require PhotoEditorSDK.UI.ReactUI.min
 ...
 */
 ```
@@ -130,8 +130,8 @@ bundle exec rails server -p 3000
 ## Switch between React- and DesktopUI
 In order to use the DesktopUI instead of the ReactUI, you need to make some changes to your setup. Replace in point ...
 
-6.  `//= require PhotoEditorSDK.UI.ReactUI` with `//= require PhotoEditorSDK.UI.DesktopUI`
-7.  `*= require PhotoEditorSDK.UI.ReactUI` with `*= require PhotoEditorSDK.UI.DesktopUI`
+6.  `//= require PhotoEditorSDK.UI.ReactUI.min` with `//= require PhotoEditorSDK.UI.DesktopUI.min`
+7.  `*= require PhotoEditorSDK.UI.ReactUI.min` with `*= require PhotoEditorSDK.UI.DesktopUI.min`
 8.  `editor = new (PhotoEditorSDK.UI.ReactUI)` with `editor = new (PhotoEditorSDK.UI.DesktopUI)` in `home.coffee` or 
 
     `var editor = new PhotoEditorSDK.UI.ReactUI` with `var editor = new PhotoEditorSDK.UI.DesktopUI` in `home.js`
