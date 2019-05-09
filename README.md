@@ -26,13 +26,13 @@ cd pesdk-rails-demo
 2. Get PhotoEditor HTML5
 
 ```bash
-export VERSION=4.18.2
+export VERSION=4.18.3
 wget "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
 with curl
 ```bash
-export VERSION=4.18.2
+export VERSION=4.18.3
 curl -O -L "https://github.com/imgly/pesdk-html5-build/archive/v$VERSION.zip"
 unzip -x "v$VERSION.zip"
 ```
