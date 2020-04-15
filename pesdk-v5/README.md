@@ -70,15 +70,7 @@ yarn install
 rails generate controller home index
 
 
-6. Serve the `index.html` file on `/`
-Open `config/routes.rb` and add:
-```rb
-root 'home#index'
-````
-
-before `end`
-
-7. Open `app/views/home/index.html.erb`
+6. Open `app/views/home/index.html.erb`
 
 ```html
 <!-- PESDK Demo Integration -->
@@ -88,7 +80,7 @@ before `end`
 ></div>
 ```
 
-8. Update `app/javascript/packs/application.js`
+7. Update `app/javascript/packs/application.js`
 
 ```javascript
 ...
@@ -104,15 +96,15 @@ window.onload = function () {
 ...
 ```
 
-7. Copy the `assets` folder from `node_modules/photoeditorsdk` to `public/`
+8. Copy the `assets` folder from `node_modules/photoeditorsdk` to `public/`
 
-8. Start rails
+9. Start rails
 
 ```bash
 rails s
 ```
 
-9. Open Webbrowser and go to `http://localhost:3000/home/index`
+10. Open Webbrowser and go to `http://localhost:3000/home/index`
 
 ## License
 
