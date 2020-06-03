@@ -22,6 +22,6 @@ window.onload = function () {
     PhotoEditorSDKUI.init({
       license: '', // <-- Please replace this with the content of your license file. The JSON-object must be in string format.
       container: '#pesdk',
-      image: './example.jpg'
+      image: '../example.png'
     })
 }
