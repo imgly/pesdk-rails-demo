@@ -50,7 +50,7 @@ rails webpacker:install
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "styled-components": "^4.4.1",
-    "photoeditorsdk": "^5.0.0"
+    "photoeditorsdk": "^5.2.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
