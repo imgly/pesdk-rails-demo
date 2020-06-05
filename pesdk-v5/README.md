@@ -50,7 +50,7 @@ rails webpacker:install
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "styled-components": "^4.4.1",
-    "photoeditorsdk": "^5.0.0"
+    "photoeditorsdk": "^5.2.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
@@ -96,7 +96,7 @@ window.onload = function () {
 ...
 ```
 
-8. Copy the `assets` folder from `node_modules/photoeditorsdk` to `public/`
+8. Copy the `assets` folder from `node_modules/photoeditorsdk` to `public/home/`
 
 9. Start rails
 
@@ -117,3 +117,4 @@ Made 2013-2020 by img.ly
 ## Support or Contact
 
 Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) on our website.
+````
