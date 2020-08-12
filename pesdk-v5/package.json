@@ -9,7 +9,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "photoeditorsdk": "^5.4.0",
+    "photoeditorsdk": "^5.5.0",
     "react": "16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
