@@ -5124,10 +5124,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-photoeditorsdk@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/photoeditorsdk/-/photoeditorsdk-5.5.0.tgz#987710d2ccb934cf46e3e82d473ec18583ada33e"
-  integrity sha512-90PuPeQVYNkSroynjsofa4OjQjxZWeRPrC0p/q1CYujZ8Sj4k63c7BTAyYhi32y0Jjc8+BUQeF2hTBLunSeOQA==
+photoeditorsdk@^5.5.2:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/photoeditorsdk/-/photoeditorsdk-5.5.2.tgz#2357fd2103a936e7e5571129c78aa17e0c96f767"
+  integrity sha512-jJ7kBStYxrLh0mwIzrW0HBi+Leb4HgTY/PGxPwh77deQ8lUL22K2C4mhQQPySWuSFUW5pkCIzlCcBVnNN2Tf3w==
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
