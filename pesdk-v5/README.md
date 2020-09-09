@@ -66,9 +66,9 @@ yarn install
 
 5. Create new home controller with index page
 
-````bash
-rails generate controller home index
-
+```bash
+ rails generate controller home index
+```
 
 6. Open `app/views/home/index.html.erb`
 
