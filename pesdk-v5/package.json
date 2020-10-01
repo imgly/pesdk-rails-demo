@@ -1,6 +1,6 @@
 {
   "name": "pesdk-rails-demo",
-  "version": "5.6.0",
+  "version": "5.6.1",
   "description": "PhotoEditor SDK integration example for AngularJS 8.0",
   "author": "img.ly GmbH <contact@img.ly>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "photoeditorsdk": "^5.6.0",
+    "photoeditorsdk": "^5.6.1",
     "react": "16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
