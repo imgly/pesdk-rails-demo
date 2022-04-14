@@ -2,6 +2,8 @@
   <img src="https://img.ly/static/logos/PE.SDK_Logo.svg" />
 </p>
 
+**You can find our latest examples at https://github.com/imgly/pesdk-web-examples.**
+
 ## Note
 
 The [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Rails-Demo) is a product of img.ly GmbH.
